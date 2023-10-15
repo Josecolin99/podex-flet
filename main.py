@@ -25,20 +25,20 @@ async def main(page: ft.Page):
     )
     upper = ft.Container(
         content=ft.Row(items_upper),
-        width=600 / 2,
-        height=80 / 2,
+        width=size(600),
+        height=size(80),
         margin=ft.margin.only(top=size(40)),
         border=ft.border.all(),
     )
     center = ft.Container(
-        width=600 / 2,
-        height=400 / 2,
+        width= size(600),
+        height=size(400),
         margin=ft.margin.only(top=size(10)),
         border=ft.border.all(),
     )
     down = ft.Container(
-        width=600 / 2,
-        height=400 / 2,
+        width=size(600),
+        height=size(400),
         margin=ft.margin.only(top=size(40)),
         border=ft.border.all(),
     )
