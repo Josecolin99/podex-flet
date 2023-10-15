@@ -1,10 +1,15 @@
+# Pokedex Main Page
+
+# Fleet modules
 import flet as ft
 
+# Tools modules
+from tools.screen_adapter import adapt_size as size
 
 async def main(page: ft.Page):
     # TODO Constant for windows
-    WIDTH = 720 / 2
-    HEIGHT = 1280 / 2
+    WIDTH = size(720)
+    HEIGHT = size(1280)
 
     # TODO Prepare container
     page.window_width = WIDTH
@@ -13,28 +18,28 @@ async def main(page: ft.Page):
     page.padding = 0
     
     items_upper = (
-        ft.Container(width=80 / 2, height=80 / 2, border=ft.border.all()),
-        ft.Container(width=40 / 2, height=40 / 2, border=ft.border.all()),
-        ft.Container(width=40 / 2, height=40 / 2, border=ft.border.all()),
-        ft.Container(width=40 / 2, height=40 / 2, border=ft.border.all()),
+        ft.Container(width=size(80), height=size(80), border=ft.border.all()),
+        ft.Container(width=size(40), height=size(40), border=ft.border.all()),
+        ft.Container(width=size(40), height=size(40), border=ft.border.all()),
+        ft.Container(width=size(40), height=size(40), border=ft.border.all()),
     )
     upper = ft.Container(
         content=ft.Row(items_upper),
         width=600 / 2,
         height=80 / 2,
-        margin=ft.margin.only(top=40),
+        margin=ft.margin.only(top=size(40)),
         border=ft.border.all(),
     )
     center = ft.Container(
         width=600 / 2,
         height=400 / 2,
-        margin=ft.margin.only(top=10),
+        margin=ft.margin.only(top=size(10)),
         border=ft.border.all(),
     )
     down = ft.Container(
         width=600 / 2,
         height=400 / 2,
-        margin=ft.margin.only(top=40),
+        margin=ft.margin.only(top=size(40)),
         border=ft.border.all(),
     )
     columns = ft.Column(spacing=0, controls=[upper, center, down])
